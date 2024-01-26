@@ -1,0 +1,25 @@
+<div class="row">
+  <h2>Movie list</h2>
+  <hr>
+  <button style="width: 150px;" class="btn btn-success" (click)="onNewMovie()">New Movie</button>
+
+  <div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="align-items: start;">
+      @for (genere of generes; track $index) {
+      <button class="nav-link" data-bs-toggle="pill"
+      type="button" role="tab"
+      [routerLink]="['/movies', 'view']"
+      [queryParams]="{ genere : genere.key}"
+      routerLinkActive="active" >
+        {{ genere.key == 0 ? 'All' : genere.value }}
+      </button>
+      }
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" role="tabpanel" tabindex="0">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+</div>

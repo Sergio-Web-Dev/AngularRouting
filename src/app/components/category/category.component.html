@@ -1,0 +1,8 @@
+<h2>Category list</h2>
+
+<p>Categoy number #{{ categoryID }}</p>
+
+
+@for (n of numbers; track $index) {
+  <a [routerLink]="['/category', n]">{{n}}</a><br>
+}

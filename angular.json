@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "externalDependencies": [""],
             "outputPath": "dist/routing-ii",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -25,6 +26,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -96,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "604ed70f-b290-49ef-8383-4ace72aeef05"
   }
 }

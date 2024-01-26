@@ -1,0 +1,12 @@
+<h2>Welcome</h2>
+
+
+<button class="btn btn-outline-primary" (click)="onGoTo()">Go to</button>
+
+<a class="btn btn-outline-danger" [routerLink]="['/contact']" [queryParams]="{ name: 'anything' }" >Go to Contact </a>
+
+<br>
+<hr><hr>
+
+<button class="btn btn-outline-primary" (click)="login()">login</button>
+<button class="btn btn-outline-primary" (click)="logout()">logout</button>

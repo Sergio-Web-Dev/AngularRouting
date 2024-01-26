@@ -1,0 +1,18 @@
+<div class="row">
+  <h4>New Movie</h4>
+  <hr>
+  <hr>
+  <label for="title">Title</label>
+  <input [(ngModel)]="movie.title" class="form-control">
+  <label for="title">Description</label>
+  <input [(ngModel)]="movie.description" class="form-control">
+  <label for="title">Image URL</label>
+  <input [(ngModel)]="movie.url" class="form-control">
+  <label for="title">Genere</label>
+  <select [(ngModel)]="movie.genere" class="form-control">
+    @for (genere of generes; track $index) {
+    <option [value]="genere.key">{{genere.value}}</option>
+    }
+  </select>
+  <button (click)="onAddMovie()" class="btn btn-outline-success">Add Movie</button>
+</div>
