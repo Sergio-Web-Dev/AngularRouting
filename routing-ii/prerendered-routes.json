@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/",
+    "/about",
+    "/categories",
+    "/category",
+    "/contact",
+    "/movies",
+    "/movies/add",
+    "/movies/view",
+    "/not-found"
+  ]
+}
