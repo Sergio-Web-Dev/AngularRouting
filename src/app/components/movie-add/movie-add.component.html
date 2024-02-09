@@ -3,13 +3,13 @@
   <hr>
   <hr>
   <label for="title">Title</label>
-  <input [(ngModel)]="movie.title" class="form-control">
+  <input [(ngModel)]="movie.title" class="form-control" (change)="onChangeMovie()">
   <label for="title">Description</label>
-  <input [(ngModel)]="movie.description" class="form-control">
+  <input [(ngModel)]="movie.description" class="form-control" (change)="onChangeMovie()">
   <label for="title">Image URL</label>
-  <input [(ngModel)]="movie.url" class="form-control">
+  <input [(ngModel)]="movie.url" class="form-control" (change)="onChangeMovie()">
   <label for="title">Genere</label>
-  <select [(ngModel)]="movie.genere" class="form-control">
+  <select [(ngModel)]="movie.genere" class="form-control" (change)="onChangeMovie()">
     @for (genere of generes; track $index) {
     <option [value]="genere.key">{{genere.value}}</option>
     }

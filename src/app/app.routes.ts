@@ -10,12 +10,17 @@ import { MovieAddComponent } from './components/movie-add/movie-add.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ProductsComponent } from './components/products/products.component';
 import { authGuard, authChildGuard } from './services/auth-guard.service';
+import { ErroPageComponent } from './components/erro-page/erro-page.component';
 
 export const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'movies', component : MoviesComponent,
     children:[
       { path: 'view', component :MovieComponent },
-      { path: 'add', component : MovieAddComponent }
+      {
+        path: 'add',
+        component : MovieAddComponent,
+        canDeactivate : [(component: MovieAddComponent) => component.onDiscardChanges()] }
     ] },
   { path: 'about', component : AboutComponent, canActivate : [authGuard] },
   { path: 'contact', component : ContactComponent },
@@ -26,7 +31,7 @@ export const routes: Routes = [
       { path: 'products/:categoryID', component: ProductsComponent }
     ]
   },
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'not-found', component: NotFoundComponent },
+  // { path: 'not-found', component: NotFoundComponent },
+  { path: 'not-found', component: ErroPageComponent, data:{ message : 'Page Not Found'} },
   { path: '**', redirectTo: '/not-found' }
 ];

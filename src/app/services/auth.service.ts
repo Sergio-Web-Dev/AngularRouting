@@ -10,7 +10,7 @@ export class AuthService {
     const promise = new Promise<boolean>((resolve, reject) => {
       setTimeout(()=> {
         resolve(this.loggedIn)
-      }, 800);
+      }, 0);
     })
 
     return promise;
@@ -19,8 +19,8 @@ export class AuthService {
   isAdmin() : Promise<boolean> {
     const promise = new Promise<boolean>((resolve, reject) => {
       setTimeout(()=> {
-        resolve(false)
-      }, 100);
+        resolve(true)
+      }, 0);
     })
 
     return promise;
